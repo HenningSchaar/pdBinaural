@@ -6,12 +6,13 @@ let filename_right;
 
 function list() {
 
-    const idx = arguments[2];
     const yaw = arguments[0];
     const pitch = arguments[1];
+    const condition = arguments[2];
+    const idx = arguments[3];
 
-    filename_left = 'r' + idx + '-left-array-' + yaw + '-' + pitch;
-    filename_right = 'r' + idx + '-right-array-' + yaw + '-' + pitch;
+    filename_left = 'r' + idx + '-c' + condition + '-left-array-' + yaw + '-' + pitch;
+    filename_right = 'r' + idx + '-c' + condition +  '-right-array-' + yaw + '-' + pitch;
 }
 
 function bang() {
