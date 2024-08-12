@@ -1,4 +1,4 @@
-#N canvas 2921 403 2018 1147 12;
+#N canvas 0 0 1924 1041 12;
 #X declare -path pdjs;
 #X obj 1281 746 hsl 162 19 0 1 0 0 empty empty empty -2 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X obj 1277 719 line, f 18;
@@ -31,7 +31,7 @@
 #X obj 19 42 array define \$0-default1;
 #X obj 495 240 change;
 #X obj 495 263 s blend-binPlayer;
-#X obj 219 362 r blend-binPlayer;
+#X obj 219 385 r blend-binPlayer;
 #X obj 557 217 change;
 #X obj 557 241 s volume-binPlayer;
 #X obj 622 198 change;
@@ -70,7 +70,7 @@
 #X obj 1277 1022 s buffer1-left-p\$1;
 #X obj 1428 1022 s buffer2-left-p\$1;
 #X obj 1558 1054 s buffer2-right-p\$1;
-#X floatatom 219 244 19 1 999 0 - condition-inlet-\$1 - 0;
+#X floatatom 219 244 8 1 999 0 - condition-inlet-\$1 - 0;
 #X obj 424 287 s condition-binPlayer;
 #X text 107 242 condition;
 #X obj 1782 141 f 1;
@@ -114,7 +114,7 @@
 #X obj 869 836 r buffer2-left-p\$1;
 #X obj 1022 836 r buffer2-right-p\$1;
 #X obj 798 1061 r volume-binPlayer;
-#X obj 168 476 r start-binPlayer;
+#X obj 168 473 r start-binPlayer;
 #X obj 281 501 r start-time-binPlayer;
 #X obj 39 701 r stop-binPlayer;
 #X obj 712 954 sig~ 1;
@@ -129,7 +129,7 @@
 #X obj 168 867 snapshot~;
 #X obj 168 912 s sample-stop-\$1;
 #X obj 312 532 r num-samples-\$1;
-#X obj 365 643 r sampling-rate-\$1;
+#X obj 365 670 r sampling-rate-\$1;
 #X obj 312 693 pack f f;
 #X obj 281 577 / 1;
 #X obj 214 601 f 0, f 10;
@@ -191,8 +191,8 @@
 #X obj 66 1301 tabwrite conditions-num-samples-\$1;
 #X obj 269 1227 r num-samples-\$1;
 #X obj 445 599 tabread conditions-num-samples-\$1;
-#X obj 387 667 tabread conditions-sampling-rates-\$1;
-#X obj 445 501 r condition-binPlayer;
+#X obj 468 621 tabread conditions-sampling-rates-\$1;
+#X obj 413 408 r condition-binPlayer;
 #X obj 445 531 f 1;
 #X obj 407 1202 r reset-table-\$1;
 #X obj 407 1226 f 1;
@@ -204,6 +204,11 @@
 #X obj 1782 116 loadbang;
 #X obj 291 935 loadbang;
 #X obj 291 959 f 0;
+#X obj 337 244 tgl 17 0 restart-binPlayer empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 413 471 spigot;
+#X text 284 243 restart;
+#X obj 452 450 r restart-binPlayer;
+#X obj 413 429 t b f;
 #X connect 1 0 0 0;
 #X connect 1 0 79 0;
 #X connect 1 0 80 0;
@@ -402,7 +407,7 @@
 #X connect 190 0 131 1;
 #X connect 190 0 130 0;
 #X connect 191 0 130 1;
-#X connect 192 0 193 0;
+#X connect 192 0 208 0;
 #X connect 193 0 200 0;
 #X connect 194 0 195 0;
 #X connect 195 0 185 1;
@@ -418,4 +423,8 @@
 #X connect 201 0 73 0;
 #X connect 202 0 203 0;
 #X connect 203 0 140 0;
+#X connect 205 0 196 0;
+#X connect 207 0 205 1;
+#X connect 208 0 205 0;
+#X connect 208 1 193 0;
 #X coords 0 -1 1 1 300 230 1 100 100;
