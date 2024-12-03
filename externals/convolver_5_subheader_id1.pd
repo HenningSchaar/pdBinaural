@@ -1,4 +1,4 @@
-#N canvas 1447 95 446 179 12;
+#N canvas 1274 90 446 179 12;
 #X declare -path ../externals/ssr;
 #X obj 19 144 dac~ 1 2, f 46;
 #X obj 360 46 loadbang;
